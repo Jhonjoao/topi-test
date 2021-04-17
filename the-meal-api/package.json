@@ -6,7 +6,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "nodemon src/server.js"
+    "dev:server": "nodemon src/server.js",
+    "start": "node server.js"
   },
   "dependencies": {
     "axios": "^0.21.1",
