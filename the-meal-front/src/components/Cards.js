@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { IconSettings } from '@salesforce/design-system-react';
-import Button from '@salesforce/design-system-react/lib/components/button'; 
 import Card from '@salesforce/design-system-react/lib/components/card';
 import CardEmpty from '@salesforce/design-system-react/lib/components/card/empty';
 import CardFilter from '@salesforce/design-system-react/lib/components/card/filter';
@@ -36,35 +34,38 @@ class Cards extends React.Component {
 		const isEmpty = this.state.items.length === 0;
 
 		return (
-			<IconSettings iconPath="/assets/icons">
-				<div className="slds-grid slds-grid_vertical">
-					<Card
-						id="ExampleCard"
-						filter={
-							(!isEmpty || this.state.isFiltering) && (
-								<CardFilter onChange={this.handleFilterChange} />
-							)
-						}
-						heading="The Meal DB"
-						icon={<Icon category="standard" name="document" size="small" />}
-						empty={
-							isEmpty ? (
-								<CardEmpty heading="No Related Items">
-									<Button label="Add Item" onClick={this.handleAddItem} />
-								</CardEmpty>
-							) : null
-						}
-					>
-						<DataTable items={this.state.items} id="DataTableExample-1">
-							<DataTableColumn
-								label="Opportunity Name"
-								property="name"
-								truncate
-							/>
-						</DataTable>
-					</Card>
-				</div>
-			</IconSettings>
+			<div className="slds-grid slds-grid_vertical">
+				<Card
+					id="ExampleCard"
+					filter={
+						(!isEmpty || this.state.isFiltering) && (
+							<CardFilter onChange={this.handleFilterChange} />
+						)
+					}
+					heading="Meals"
+					icon={
+						<Icon 
+							assistiveText={{ label: 'food_and_drink' }} 
+							category="utility" 
+							name="food_and_drink" 
+							size="medium" 
+						/>
+					}
+					empty={
+						isEmpty ? (
+							<CardEmpty heading="No Related Items"></CardEmpty>
+						) : null
+					}
+				>
+					<DataTable items={this.state.items} id="DataTableExample-1">
+						<DataTableColumn
+							label="Opportunity Name"
+							property="name"
+							truncate
+						/>
+					</DataTable>
+				</Card>
+			</div>
 		);
 	}
 };

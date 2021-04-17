@@ -35,13 +35,14 @@ class Categories extends React.Component {
                     <VisualPicker
                         label="Filtre por categoria"
                         id="visual-picker-coverable-radio"
-                        className="slds-p-around_medium"
+                        className="slds-p-around_medium slds-visual-picker_small"
                         coverable
                     >
                         <Radio
                             labels={{
                                 label: 'Category',
                             }}
+                            size="small"
                             id="visual-picker-coverable-radio-1"
                             onRenderVisualPickerSelected={() => (
                                 <Icon

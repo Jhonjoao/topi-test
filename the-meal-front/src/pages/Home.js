@@ -10,17 +10,14 @@ export default function Home(){
             <div className="slds-builder-header_container">
                 <Header></Header>
             </div>
-            <div className="slds-p-top_xx-large">            
-                <Categories></Categories>
-            </div>
-            <div className="slds-grid slds-gutters slds-p-top_medium">
-                <div className="slds-col slds-size_1-of-2">
+            <div className="slds-grid slds-gutters slds-p-top_xx-large">
+                <div className="slds-col slds-size_3-of-4">
                     <article>
                         <Cards></Cards>
                     </article>
                 </div>
                 <div className="slds-col">
-                    <span>2</span>
+                    <Categories></Categories>
                 </div>
             </div>
             
