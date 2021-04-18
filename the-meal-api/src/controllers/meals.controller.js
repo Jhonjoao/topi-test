@@ -1,20 +1,22 @@
-const getAllMeals = require('../services/getAllMeal'); 
+const getAllMeal = require('../services/getAllMeal');
 
+let meals 
 async function index(req, res){
-    const all_meals =  await getAllMeals.run();
+    const { page = 1 } = req.query;
 
-    let list_meal = []
+    if(!meals){
+        meals = await getAllMeal.run();
+    }
 
+    const final_itens = page * 10
+    const init_itens = final_itens - 10
 
-    all_meals.data.meals.map((meal) => {
-        let obj_filtered = {
-            id: meal.idMeal,
-            name: meal.strMeal
-        }
-        list_meal.push(obj_filtered)
-    })
+    let data = meals.slice(init_itens, final_itens)
 
-    return res.json(list_meal);
+    res.header('X-Total-Count', meals.length);
+
+    return res.json(data)
+
 }
 
 module.exports = { index }

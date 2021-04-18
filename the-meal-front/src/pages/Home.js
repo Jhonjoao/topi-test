@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Header from '../components/Header';
-import Cards from '../components/Cards';
+import Meals from '../components/Meals';
 import Categories from '../components/Categories';
 
 export default function Home(){
@@ -13,14 +13,13 @@ export default function Home(){
             <div className="slds-grid slds-gutters slds-p-top_xx-large">
                 <div className="slds-col slds-size_3-of-4">
                     <article>
-                        <Cards></Cards>
+                        <Meals></Meals>
                     </article>
                 </div>
                 <div className="slds-col">
                     <Categories></Categories>
                 </div>
             </div>
-            
         </div>
     )
 }

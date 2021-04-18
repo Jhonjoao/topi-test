@@ -18,18 +18,17 @@ Opção de ajuda pro deploy:
     https://github.com/mars/heroku-cra-node
 
 
-Lista do que fazer
-- [ ]analisar a possibilidade de salvar as informações em um mongo db
-- [ ]analisar com relação ao deploy 
-- [ ]analisar - mudança de fluxo para solicidar obrigatóriamnete categoria (apenas uma idea de alguém com sono)
+### Lista tasks
 
-- [x]api - criar o metodo que pega o resumo de todas as meals (pegando no momento nome e id)
-- [ ]api - criar método que pega os detalhes
-
-- [ ]back - testes automatizados com jest
-
-- [ ]front - consumir apis
-- [ ]front - modal/tela que ira aparecer os detalhes da meal
-- [ ]front - filtro por categorias
-- [ ]front - olhada no responsivo
-
+<ul>
+    <li>- [x] analisar a possibilidade de salvar as informações em um mongo db (capturadas e salvas 266 refeições)</li>
+    <li>- [ ] analisar com relação ao deploy </li>
+    <li>- [x] api - criar o metodo que pega o resumo de todas as meals</li>
+    <li>- [ ] api - criar método que pega os detalhes</li>
+    <li>- [ ] back - testes automatizados com jest</li>
+    <li>- [x] front - consumir apis</li>
+    <li>- [ ] front - modal/tela que ira aparecer os detalhes da meal</li>
+    <li>- [ ] front - filtro por categorias</li>
+    <li>- [ ] front - olhada no responsivo</li>
+    <li>- [x] front - scroll infinito em lista</li>
+</ul>

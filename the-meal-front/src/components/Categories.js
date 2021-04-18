@@ -42,7 +42,7 @@ class Categories extends React.Component {
                             labels={{
                                 label: 'Category',
                             }}
-                            size="small"
+                            size="medium"
                             id="visual-picker-coverable-radio-1"
                             onRenderVisualPickerSelected={() => (
                                 <Icon

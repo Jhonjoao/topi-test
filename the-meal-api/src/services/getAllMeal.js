@@ -1,7 +1,19 @@
 const axios = require('axios');
+const fs = require('fs');
+const path = require("path");
 
+//função usada para capturar todas as refeições
 async function run(){
-    const meals = await axios.get('https://www.themealdb.com/api/json/v1/1/search.php?s=')
+    let meals = []
+    const alfabeto = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q','r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+    await Promise.all(alfabeto.map(async (letter) => {
+        let res = await axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?f=${letter}`)
+        if(res.data.meals){
+            res.data.meals.map((meal) => {
+                meals.push(meal)
+            })
+        }
+    }));
 
     return meals;
 }
