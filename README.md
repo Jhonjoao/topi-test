@@ -2,12 +2,12 @@
 
 Front-end - React - https://test-topi.herokuapp.com/
 
-Para iniciar o projeto rodar um 'nmp install' ou 'yarn install' e um 'yarn start' ou 'npm start'
+Para iniciar o projeto rodar um 'nmp install' ou 'yarn install' e um 'yarn start' ou 'npm start' dentro do the-meal-front 
 
 
 Back end - node.js - https://topi-api-test.herokuapp.com/
 
-Para iniciar o projeto rodar um 'nmp install' ou 'yarn install' e um 'yarn dev:server' ou 'npm dev:server'
+Para iniciar o projeto rodar um 'nmp install' ou 'yarn install' e um 'yarn dev:server' ou 'npm dev:server' dentro do the-meal-api
 
 
 
