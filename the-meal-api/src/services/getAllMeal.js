@@ -10,6 +10,7 @@ async function run(){
         let res = await axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?f=${letter}`)
         if(res.data.meals){
             res.data.meals.map((meal) => {
+                meal.id = meal.idMeal
                 meals.push(meal)
             })
         }
