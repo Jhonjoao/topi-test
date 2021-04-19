@@ -5,9 +5,27 @@ import CardEmpty from '@salesforce/design-system-react/lib/components/card/empty
 import CardFilter from '@salesforce/design-system-react/lib/components/card/filter';
 import DataTable from '@salesforce/design-system-react/lib/components/data-table';
 import DataTableColumn from '@salesforce/design-system-react/lib/components/data-table/column';
+import DataTableCell from '@salesforce/design-system-react/lib/components/data-table/cell';
 import Icon from '@salesforce/design-system-react/lib/components/icon';
+import { Link } from 'react-router-dom';
 
+import ModalDetails from './ModalDetails';
 import api from '../services/api';
+
+const CustomDataTableCell = ({ children, ...props }) => (
+	<DataTableCell {...props}>
+		<Link
+			to="#"
+			onClick={(event) => {
+				props.openModal(props.item)
+				event.preventDefault();
+			}}
+		>
+			{children}
+		</Link>
+	</DataTableCell>
+);
+CustomDataTableCell.displayName = DataTableCell.displayName;
 
 class Meals extends React.Component {
 	state = {
@@ -15,7 +33,9 @@ class Meals extends React.Component {
 		isFiltering: false,
 		loadingItens: false,
 		hasMore: true,
-		total: 0
+		total: 0,
+		isOpen: false,
+		selectedMeal: '',
 	};
 
 	isLoading = false;
@@ -61,19 +81,19 @@ class Meals extends React.Component {
 		this.isLoading = true;
 	};
 
-	handleChanged = () => {
-		console.log('handleChanged')
-	}
-	handleSort = () => {
-		console.log('handleSort')
-
-	}
-
+	toggleOpen = (item) => {
+		this.setState({ isOpen: !this.state.isOpen, selectedMeal: item });
+	};
 	render() {
 		const isEmpty = this.state.items.length === 0;
 
 		return (
 			<div className="slds-grid slds-grid_vertical">
+				<ModalDetails 
+					isOpen={this.state.isOpen} 
+					toggleOpen={this.toggleOpen} 
+					meal={this.state.selectedMeal}
+				></ModalDetails>
 				<Card
 					id="ExampleCard"
 					filter={
@@ -81,12 +101,11 @@ class Meals extends React.Component {
 							<CardFilter onChange={this.handleFilterChange} />
 						)
 					}
-					heading="Refeições"
+					heading="All Meals"
 					icon={
 						<Icon 
-							assistiveText={{ label: 'food_and_drink' }} 
-							category="utility" 
-							name="food_and_drink" 
+							assistiveText={{ label: 'all' }} 
+							name="all" 
 							size="medium" 
 						/>
 					}
@@ -110,11 +129,22 @@ class Meals extends React.Component {
 							fixedLayout
 							hasMore={this.state.hasMore}
 							onLoadMore={this.handleLoadMore}
+							key="idMeal"
 						>
 							<DataTableColumn
-								label="Nome"
+								label="Name"
 								property="strMeal"
-								truncate
+								primaryColumn
+							>
+								<CustomDataTableCell openModal={this.toggleOpen} />
+							</DataTableColumn>
+							<DataTableColumn
+								label="Category"
+								property="strCategory"
+							/>
+							<DataTableColumn
+								label="Area"
+								property="strArea"
 							/>
 						</DataTable>
 					</div>
