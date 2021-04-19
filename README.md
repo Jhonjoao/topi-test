@@ -1,9 +1,13 @@
 # TOPi - Full Stack Developer Test
 
-Front-end - React 
+Front-end - React - https://test-topi.herokuapp.com/
 
-Back end - node.js
+Para iniciar o projeto rodar um 'nmp install' ou 'yarn install' e um 'yarn start' ou 'npm start'
 
+
+Back end - node.js - https://topi-api-test.herokuapp.com/
+
+Para iniciar o projeto rodar um 'nmp install' ou 'yarn install' e um 'yarn dev:server' ou 'npm dev:server'
 
 
 
@@ -12,14 +16,14 @@ Back end - node.js
 Base para adicionar o salesforce design system no projeto React: 
     https://github.com/salesforce/design-system-react/blob/master/docs/create-react-app.md
 
-Guias/Docs:
+Guias/Docs: 
     https://www.lightningdesignsystem.com/
     https://react.lightningdesignsystem.com/
 
 ### Lista tasks
 <ul>
     <li>- [x] analisar a possibilidade de salvar as informações em um mongo db (capturadas e salvas 266 refeições)</li>
-    <li>- [ ] analisar com relação ao deploy </li>
+    <li>- [x] deploy </li>
     <li>- [x] api - criar o metodo que pega o resumo de todas as meals</li>
     <li>- [ ] back - testes automatizados com jest</li>
     <li>- [x] front - consumir apis</li>
